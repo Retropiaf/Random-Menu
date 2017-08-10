@@ -8,24 +8,39 @@ food_counter = []
 
 puts "\nHow many menu items do you want to see (choose a number between 1 and 10)?"
 user_choice = gets.chomp.to_i
-until user_choice >= 0 && user_choice <= 10
+until user_choice >= 1 && user_choice <= 10
   puts "\nChoose a number between 1 and 10."
   user_choice = gets.chomp.to_i
 end
 
 user_choice.times do |x|
         puts "\nEnter a taste adjective:"
-        taste << gets.chomp
+        taste_adj = gets.chomp
+        while taste.include? taste_adj
+          puts "\nYou already entered this adjective. Enter a new adjective:"
+          taste_adj = gets.chomp
+        end
+        taste << taste_adj
 end
 
 user_choice.times do
         puts "\nEnter a cooking style:"
-        cooking_style << gets.chomp
+        cooking_style_adj = gets.chomp
+        while cooking_style.include? cooking_style_adj
+          puts "\nYou already entered this adjective. Enter a new adjective:"
+        cooking_style_adj = gets.chomp
+        end
+        cooking_style << cooking_style_adj
 end
 
 user_choice.times do
         puts "\nEnter a food type:"
-        food << gets.chomp
+        food_adj = gets.chomp
+        while food.include? food_adj
+          puts "\nYou already entered this adjective. Enter a new adjective:"
+          food_adj = gets.chomp
+        end
+        food << food_adj
 end
 
 
