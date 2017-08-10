@@ -62,3 +62,4 @@ user_choice.times do |i|
   puts "#{i+1}. #{taste_choice} #{cooking_style_choice} #{food_choice}\n"
 
 end
+
